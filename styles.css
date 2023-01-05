@@ -1,0 +1,141 @@
+@font-face {
+  font-family: Advent;
+  src: url(./font/AdventPro-Regular.ttf);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Advent, sans-serif;
+  background-color: rgb(95, 116, 129);
+}
+
+p {
+  text-align: end;
+  margin-right: 15px;
+  font-size: 35px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+
+.calculator {
+  background-color: whitesmoke;
+  margin-top: 4%;
+  border-radius: 50px;
+  box-shadow: 0 0 30px gray;
+  width: 410px;
+  height: 64vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border: 8px solid rgb(228, 228, 228);
+}
+
+.display {
+  background-color: whitesmoke;
+  margin-top: 15px;
+  border-radius: 30px;
+  width: 90%;
+  box-shadow: inset 5px 5px 10px gray;
+}
+
+button {
+  font-family: Advent, sans-serif;
+  font-size: 33px;
+  border-radius: 50px;
+  box-shadow: 0 7px 10px gray;
+  width: 85px;
+  height: 85px;
+  border: 0;
+}
+
+.op:hover {
+  background-color: rgb(253, 255, 206);
+}
+
+.op:active {
+  transform: scale(1);
+}
+
+.eq:hover {
+  background-color: rgb(170, 223, 180);
+}
+
+.eq:active {
+  transform: scale(1);
+}
+
+button:hover {
+  transform: scale(1.08);
+  background-color: rgb(203, 236, 255);
+}
+
+button:active {
+  transform: scale(1);
+}
+
+.buttons {
+  display: flex;
+}
+
+.longer {
+  width: 139px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: lighter;
+}
+
+.longer:hover {
+  background-color: rgb(255, 218, 218);
+}
+
+.longer:active {
+  transform: scale(1);
+}
+
+.zero {
+  width: 190px;
+}
+
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  justify-content: center;
+  margin-left: 5px;
+}
+
+.operators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-right: 2px;
+}
+
+.footer {
+  margin-top: 20vh;
+}
+
+footer {
+  font-size: 24px;
+  color: whitesmoke;
+}
+
+a:link {
+  color: whitesmoke;
+}
+
+a:hover {
+  color: white;
+}
+
+a:active {
+  color: white;
+}
+
+a:visited {
+  color: whitesmoke;
+}
