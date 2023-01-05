@@ -6,6 +6,8 @@
     at the beginning
     DONE after clear
     DONE after delete
+
+-------
 5. operate function - takes numbers and operators and is
     called when = is pressed
 6. round numbers with long decimals
@@ -21,7 +23,7 @@ const del = document.querySelector('#delete');
 const dot = document.querySelector('#dot');
 
 const div = document.querySelector('#divide');
-const mult = document.querySelector('#mulp');
+const mult = document.querySelector('#mult');
 const min = document.querySelector('#min');
 const plus = document.querySelector('#plus');
 const equal = document.querySelector('#equal');
@@ -35,7 +37,7 @@ function calculator() {
     num.addEventListener('click', (e) => {
       array.push(`${e.target.value}`);
       display.textContent = array.join('');
-      console.log(array);
+      //console.log(array);
       if (array.length === 19) {
         num.disabled = true;
       }
@@ -64,14 +66,42 @@ function calculator() {
     }
     dot.disabled = false;
   })
-
+  let a;
+  if (array.includes('.')) {
+    a = parseFloat(array.slice().join(''));
+  } else {
+    a = parseInt(array.slice().join(''));
+  }
+  // need to store the first number
+  // outside of eventlisteners for all the operators
+  plus.addEventListener('click', () => {
+    let bAdd;
+    array = [];
+    if (array.includes('.')) {
+      second = parseFloat(array.slice().join(''));
+    } else {
+      second = parseInt(array.slice().join(''));
+    } add(first, second);
+  })
+// need to call a separate function on nums
+// maybe separate function for every eventlistener, but 
+// common array
 }
 
-//operators functions 
+/*operators functions 
 function add(arr) {
   let a;
   let b;
   if (arr.includes('.')) {
-
-  }
-}
+    a = parseFloat(arr.slice().join(''));
+  } else {
+    a = parseInt(arr.slice().join(''));
+  } arr = [];
+  display.textContent = "0";
+  if (arr.includes('.')) {
+    a = parseFloat(arr.slice().join(''));
+  } else {
+    a = parseInt(arr.slice().join(''));
+  } arr = [];
+  display.textContent = `${a + b}`;
+}*/
