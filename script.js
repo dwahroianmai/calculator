@@ -10,6 +10,9 @@ nums.forEach((num) => {
     display.textContent += `${e.target.value}`;
     array = display.textContent.split('');
     console.log(array);
+    if (array.length === 20) {
+      num.disabled = true;
+    }
     })
   })
 
