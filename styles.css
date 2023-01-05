@@ -16,15 +16,13 @@ p {
   text-align: end;
   margin-right: 15px;
   font-size: 35px;
-  margin-top: 13px;
-  margin-bottom: 13px;
 }
 
 .calculator {
   background-color: whitesmoke;
   margin-top: 4%;
   border-radius: 50px;
-  box-shadow: 0 0 30px gray;
+  box-shadow: 0 0 20px rgb(255, 255, 255);
   width: 410px;
   height: 64vh;
   display: flex;
@@ -37,9 +35,13 @@ p {
 .display {
   background-color: whitesmoke;
   margin-top: 15px;
+  height: 61px;
   border-radius: 30px;
   width: 90%;
   box-shadow: inset 5px 5px 10px gray;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 button {
@@ -53,7 +55,7 @@ button {
 }
 
 .op:hover {
-  background-color: rgb(253, 255, 206);
+  background-color: rgb(251, 255, 123);
 }
 
 .op:active {
@@ -61,7 +63,7 @@ button {
 }
 
 .eq:hover {
-  background-color: rgb(170, 223, 180);
+  background-color: rgb(126, 255, 150);
 }
 
 .eq:active {
@@ -70,7 +72,7 @@ button {
 
 button:hover {
   transform: scale(1.08);
-  background-color: rgb(203, 236, 255);
+  background-color: rgb(160, 220, 255);
 }
 
 button:active {
@@ -88,7 +90,7 @@ button:active {
 }
 
 .longer:hover {
-  background-color: rgb(255, 218, 218);
+  background-color: rgb(255, 181, 181);
 }
 
 .longer:active {
