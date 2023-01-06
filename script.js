@@ -33,13 +33,24 @@ calculator();
 //all the buttons
 function calculator() {
   let array = [];
+  let a = 0;
+  let copy = 0;
+  let sign = '';
   nums.forEach((num) => {
     num.addEventListener('click', (e) => {
       array.push(`${e.target.value}`);
       display.textContent = array.join('');
-      //console.log(array);
-      if (array.length === 19) {
-        num.disabled = true;
+      if (array.includes('.')) {
+        a = parseFloat(array.join(''));
+      } else {
+        a = parseInt(array.join(''));
+      }
+      console.log(a)
+      console.log(array);
+      if (array.length === 18) {
+        for (let num of nums) {
+          num.disabled = true;
+        }
       }
     })
   })
@@ -58,7 +69,12 @@ function calculator() {
   });
   del.addEventListener('click', () => {
     array.pop();
-    console.log(array);
+    if (array.includes('.')) {
+      a = parseFloat(array.join(''));
+    } else {
+      a = parseInt(array.join(''));
+    }
+    console.log(a);
     if (array.length === 0) {
       display.textContent = "0";
     } else {
@@ -66,42 +82,29 @@ function calculator() {
     }
     dot.disabled = false;
   })
-  let a;
-  if (array.includes('.')) {
-    a = parseFloat(array.slice().join(''));
-  } else {
-    a = parseInt(array.slice().join(''));
-  }
-  // need to store the first number
-  // outside of eventlisteners for all the operators
   plus.addEventListener('click', () => {
-    let bAdd;
-    array = [];
+    sign = '+';
     if (array.includes('.')) {
-      second = parseFloat(array.slice().join(''));
+      copy = parseFloat(array.slice().join(''))
     } else {
-      second = parseInt(array.slice().join(''));
-    } add(first, second);
+      copy = parseInt(array.slice().join(''));
+    } 
+    array = [];
+    console.log(copy);
   })
-// need to call a separate function on nums
-// maybe separate function for every eventlistener, but 
-// common array
+  min.addEventListener('click', () => {
+    
+  })
+  equal.addEventListener('click', () => {
+    if (sign === '+') {
+      display.textContent = `${copy + a}`  
+    } else if (sign === '-') {
+      display.textContent = `${copy - a}`
+    }
+  })
 }
 
-/*operators functions 
-function add(arr) {
-  let a;
-  let b;
-  if (arr.includes('.')) {
-    a = parseFloat(arr.slice().join(''));
-  } else {
-    a = parseInt(arr.slice().join(''));
-  } arr = [];
-  display.textContent = "0";
-  if (arr.includes('.')) {
-    a = parseFloat(arr.slice().join(''));
-  } else {
-    a = parseInt(arr.slice().join(''));
-  } arr = [];
-  display.textContent = `${a + b}`;
-}*/
+//press + 
+// save array content
+//wait for input
+// add numbers
